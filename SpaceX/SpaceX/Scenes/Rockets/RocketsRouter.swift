@@ -13,7 +13,7 @@
 import UIKit
 
 @objc protocol RocketsRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToRocketDetail(segue: UIStoryboardSegue?)
 }
 
 protocol RocketsDataPassing {
@@ -26,32 +26,32 @@ class RocketsRouter: NSObject, RocketsRoutingLogic, RocketsDataPassing {
 
     // MARK: Routing
 
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
-    //{
-    //  if let segue = segue {
-    //    let destinationVC = segue.destination as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
+    func routeToRocketDetail(segue: UIStoryboardSegue?) {
+        if let segue = segue {
+            let destinationVC = segue.destination as! RocketDetailViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToRocketDetail(source: dataStore!, destination: &destinationDS)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let destinationVC = storyboard.instantiateViewController(withIdentifier: "RocketDetailViewController") as! RocketDetailViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToRocketDetail(source: dataStore!, destination: &destinationDS)
+            navigateToRocketDetail(source: viewController!, destination: destinationVC)
+        }
+    }
 
-    // MARK: Navigation
+    /// MARK: Navigation
 
-    //func navigateToSomewhere(source: RocketsViewController, destination: SomewhereViewController)
-    //{
-    //  source.show(destination, sender: nil)
-    //}
+    func navigateToRocketDetail(source: RocketsViewController, destination: RocketDetailViewController) {
+        source.show(destination, sender: nil)
+    }
 
-    // MARK: Passing data
+    /// MARK: Passing data
 
-    //func passDataToSomewhere(source: RocketsDataStore, destination: inout SomewhereDataStore)
-    //{
-    //  destination.name = source.name
-    //}
+    func passDataToRocketDetail(source: RocketsDataStore, destination: inout RocketDetailDataStore) {
+        let selectedRow = viewController?.tableView.indexPathForSelectedRow?.row
+        let selectedItem = source.rockets![selectedRow!]
+        let passingData = Rockets.GetRocketList.RocketDetailPassData(rocketID: selectedItem.rocketID ?? "", rocketName: selectedItem.rocketName ?? "")
+        destination.passingData = passingData
+    }
 }

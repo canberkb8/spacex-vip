@@ -30,7 +30,7 @@ class RocketsInteractor: RocketsBusinessLogic, RocketsDataStore {
     func getRocketList(request: Rockets.GetRocketList.Request) {
         worker.getRocketList(completion: { (rockets, error) in
             if error != nil {
-                print(error!.localizedDescription)
+                self.presenter?.presentRocketError(error: error!)
                 //TODO: Bu kısımda hata mesajını ekranda göstermek için Clean Swift döngüsü çalıştırabilirsiniz.
             } else {
                 self.rockets = rockets

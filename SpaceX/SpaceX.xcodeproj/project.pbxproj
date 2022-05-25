@@ -36,6 +36,15 @@
 		4D6AF02F283267E7009F7C1E /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6AF029283267E7009F7C1E /* RocketsViewController.swift */; };
 		4D6AF030283267E7009F7C1E /* RocketsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6AF02A283267E7009F7C1E /* RocketsInteractor.swift */; };
 		4D6AF03328327A8A009F7C1E /* RocketsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6AF03228327A8A009F7C1E /* RocketsTableView.swift */; };
+		4D74C28F2833D3AE00E126C6 /* RocketsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74C28D2833D3AE00E126C6 /* RocketsTableViewCell.swift */; };
+		4D74C2902833D3AE00E126C6 /* RocketsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D74C28E2833D3AE00E126C6 /* RocketsTableViewCell.xib */; };
+		4D74C2982833DD2C00E126C6 /* RocketDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74C2922833DD2C00E126C6 /* RocketDetailPresenter.swift */; };
+		4D74C2992833DD2C00E126C6 /* RocketDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74C2932833DD2C00E126C6 /* RocketDetailWorker.swift */; };
+		4D74C29A2833DD2C00E126C6 /* RocketDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74C2942833DD2C00E126C6 /* RocketDetailRouter.swift */; };
+		4D74C29B2833DD2C00E126C6 /* RocketDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74C2952833DD2C00E126C6 /* RocketDetailModels.swift */; };
+		4D74C29C2833DD2C00E126C6 /* RocketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74C2962833DD2C00E126C6 /* RocketDetailViewController.swift */; };
+		4D74C29D2833DD2C00E126C6 /* RocketDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74C2972833DD2C00E126C6 /* RocketDetailInteractor.swift */; };
+		4D74C29F2833DDC400E126C6 /* RocketDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74C29E2833DDC400E126C6 /* RocketDetailResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -85,6 +94,15 @@
 		4D6AF029283267E7009F7C1E /* RocketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewController.swift; sourceTree = "<group>"; };
 		4D6AF02A283267E7009F7C1E /* RocketsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsInteractor.swift; sourceTree = "<group>"; };
 		4D6AF03228327A8A009F7C1E /* RocketsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsTableView.swift; sourceTree = "<group>"; };
+		4D74C28D2833D3AE00E126C6 /* RocketsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsTableViewCell.swift; sourceTree = "<group>"; };
+		4D74C28E2833D3AE00E126C6 /* RocketsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RocketsTableViewCell.xib; sourceTree = "<group>"; };
+		4D74C2922833DD2C00E126C6 /* RocketDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailPresenter.swift; sourceTree = "<group>"; };
+		4D74C2932833DD2C00E126C6 /* RocketDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailWorker.swift; sourceTree = "<group>"; };
+		4D74C2942833DD2C00E126C6 /* RocketDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailRouter.swift; sourceTree = "<group>"; };
+		4D74C2952833DD2C00E126C6 /* RocketDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailModels.swift; sourceTree = "<group>"; };
+		4D74C2962833DD2C00E126C6 /* RocketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailViewController.swift; sourceTree = "<group>"; };
+		4D74C2972833DD2C00E126C6 /* RocketDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailInteractor.swift; sourceTree = "<group>"; };
+		4D74C29E2833DDC400E126C6 /* RocketDetailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +166,7 @@
 		4D696E89282D49D3002D041B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4D74C2912833DD0200E126C6 /* RocketDetail */,
 				4D696E8A282D4A22002D041B /* Rockets */,
 			);
 			path = Scenes;
@@ -171,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				4D6AF007283246E1009F7C1E /* RocketsResponseModel.swift */,
+				4D74C29E2833DDC400E126C6 /* RocketDetailResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,8 +240,23 @@
 			isa = PBXGroup;
 			children = (
 				4D6AF03228327A8A009F7C1E /* RocketsTableView.swift */,
+				4D74C28D2833D3AE00E126C6 /* RocketsTableViewCell.swift */,
+				4D74C28E2833D3AE00E126C6 /* RocketsTableViewCell.xib */,
 			);
 			path = SubView;
+			sourceTree = "<group>";
+		};
+		4D74C2912833DD0200E126C6 /* RocketDetail */ = {
+			isa = PBXGroup;
+			children = (
+				4D74C2922833DD2C00E126C6 /* RocketDetailPresenter.swift */,
+				4D74C2932833DD2C00E126C6 /* RocketDetailWorker.swift */,
+				4D74C2942833DD2C00E126C6 /* RocketDetailRouter.swift */,
+				4D74C2952833DD2C00E126C6 /* RocketDetailModels.swift */,
+				4D74C2962833DD2C00E126C6 /* RocketDetailViewController.swift */,
+				4D74C2972833DD2C00E126C6 /* RocketDetailInteractor.swift */,
+			);
+			path = RocketDetail;
 			sourceTree = "<group>";
 		};
 		78F53AFFFADC889CB0BD720F /* Frameworks */ = {
@@ -306,6 +341,7 @@
 				4D696E4F282D3E4A002D041B /* LaunchScreen.storyboard in Resources */,
 				4D696E4C282D3E4A002D041B /* Assets.xcassets in Resources */,
 				4D696E4A282D3E49002D041B /* Main.storyboard in Resources */,
+				4D74C2902833D3AE00E126C6 /* RocketsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,23 +383,31 @@
 				4D6AF018283258EE009F7C1E /* UIViewController.swift in Sources */,
 				4D6AF030283267E7009F7C1E /* RocketsInteractor.swift in Sources */,
 				4D6AF02D283267E7009F7C1E /* RocketsRouter.swift in Sources */,
+				4D74C2992833DD2C00E126C6 /* RocketDetailWorker.swift in Sources */,
+				4D74C29C2833DD2C00E126C6 /* RocketDetailViewController.swift in Sources */,
 				4D696E43282D3E49002D041B /* AppDelegate.swift in Sources */,
 				4D696E45282D3E49002D041B /* SceneDelegate.swift in Sources */,
 				4D6AF02B283267E7009F7C1E /* RocketsPresenter.swift in Sources */,
+				4D74C29D2833DD2C00E126C6 /* RocketDetailInteractor.swift in Sources */,
 				4D6AF01C283258EE009F7C1E /* UICollectionViewCell.swift in Sources */,
 				4D6AF017283258EE009F7C1E /* UserDefaults.swift in Sources */,
+				4D74C28F2833D3AE00E126C6 /* RocketsTableViewCell.swift in Sources */,
 				4D6AF019283258EE009F7C1E /* UIImageView.swift in Sources */,
 				4D6AF01A283258EE009F7C1E /* CustomError.swift in Sources */,
 				4D6AF02F283267E7009F7C1E /* RocketsViewController.swift in Sources */,
+				4D74C29A2833DD2C00E126C6 /* RocketDetailRouter.swift in Sources */,
 				4D6AF024283266AD009F7C1E /* RocketsService.swift in Sources */,
 				4D6AF01E283258EE009F7C1E /* ConnectionManager.swift in Sources */,
 				4D6AF015283258EE009F7C1E /* UIView.swift in Sources */,
 				4D6AF01D283258EE009F7C1E /* Util.swift in Sources */,
 				4D6AF016283258EE009F7C1E /* UITableViewCell.swift in Sources */,
+				4D74C29B2833DD2C00E126C6 /* RocketDetailModels.swift in Sources */,
 				4D6AF03328327A8A009F7C1E /* RocketsTableView.swift in Sources */,
+				4D74C2982833DD2C00E126C6 /* RocketDetailPresenter.swift in Sources */,
 				4D6AF02C283267E7009F7C1E /* RocketsWorker.swift in Sources */,
 				4D6AF02128325AE8009F7C1E /* CardView.swift in Sources */,
 				4D6AF008283246E1009F7C1E /* RocketsResponseModel.swift in Sources */,
+				4D74C29F2833DDC400E126C6 /* RocketDetailResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,7 +19,6 @@ final class RocketsTableView: NSObject {
 
     private lazy var itemList: [Rockets.GetRocketList.ViewModel.DisplayedRocket] = []
 
-    /// Json TableView Output Delegate
     weak var delegate: RocketsTableViewOutput?
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,17 +26,17 @@ final class RocketsTableView: NSObject {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*
-        guard let cell: CategoryListTableViewCell = tableView.dequeueReusableCell(withIdentifier: CategoryListTableViewCell.identifier) as? CategoryListTableViewCell else {
+
+        guard let cell: RocketsTableViewCell = tableView.dequeueReusableCell(withIdentifier: RocketsTableViewCell.identifier) as? RocketsTableViewCell else {
             return UITableViewCell()
         }
-        cell.setup(categoryModel: itemList[indexPath.row])
+        cell.saveModel(rocketModel: itemList[indexPath.row])
         cell.selectionStyle = .none
-         */
+
         //let image = UIImageView(image: UIImage(named: "petRecognize")!)
         //image.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         //cell.accessoryView = image
-        return UITableViewCell()
+        return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -45,8 +44,7 @@ final class RocketsTableView: NSObject {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        //return UITableView.automaticDimension
-        return 50
+        return UITableView.automaticDimension
     }
 }
 

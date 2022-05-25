@@ -20,7 +20,12 @@ public final class CNetwork {
                 case .success(let responseData):
                     completion(.success(responseData))
                 case .failure(let error):
-                    completion(.failure(error))
+                    if (response.response?.statusCode != nil) {
+                        print(response.response!.statusCode)
+                        completion(.failure(CNetworkError.unexpected(code: response.response!.statusCode)))
+                    }else {
+                        completion(.failure(error))
+                    }
                 }
                 //if loading { self.activityIndicatorView.stopAnimating() }
             }

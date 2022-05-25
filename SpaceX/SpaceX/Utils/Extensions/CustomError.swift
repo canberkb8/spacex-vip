@@ -14,7 +14,13 @@ extension CustomError: LocalizedError {
                 "The specified item could not be found.",
                 comment: "Resource Not Found"
             )
-        case .unexpected(_):
+        case .unexpected(code: let code):
+            if (code == 400) {
+                return NSLocalizedString(
+                    "Bad request.",
+                    comment: "Bad Request"
+                )
+            }
             return NSLocalizedString(
                 "An unexpected error occurred.",
                 comment: "Unexpected Error"

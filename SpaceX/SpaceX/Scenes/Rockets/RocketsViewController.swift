@@ -16,6 +16,7 @@ import UIKit
 
 protocol RocketsDisplayLogic: AnyObject {
     func displayGetRocketList(viewModel: Rockets.GetRocketList.ViewModel)
+    func displayRocketError(error: Error)
 }
 
 class RocketsViewController: BaseViewController {
@@ -57,9 +58,10 @@ class RocketsViewController: BaseViewController {
         tableView.delegate = rocketsTableView
         tableView.dataSource = rocketsTableView
         rocketsTableView.delegate = self
-        //tableView.separatorColor = .clear
-        //tableView.estimatedRowHeight = UITableView.automaticDimension
-        //tableView.rowHeight = UITableView.automaticDimension
+        RocketsTableViewCell.registerCellXib(with: tableView)
+        tableView.separatorColor = .clear
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
     }
 
     // MARK: Routing
@@ -88,17 +90,21 @@ class RocketsViewController: BaseViewController {
 }
 
 extension RocketsViewController: RocketsDisplayLogic {
-
+    
     func displayGetRocketList(viewModel: Rockets.GetRocketList.ViewModel) {
         displayedRockets = viewModel.displayedRockets
         rocketsTableView.update(newItemList: displayedRockets)
         tableView.reloadData()
     }
+    
+    func displayRocketError(error: Error) {
+        print(error.localizedDescription)
+    }
 
 }
 
-extension RocketsViewController: RocketsTableViewOutput{
+extension RocketsViewController: RocketsTableViewOutput {
     func onSelected(item: Rockets.GetRocketList.ViewModel.DisplayedRocket) {
-        print(item)
+        router?.routeToRocketDetail(segue: nil)
     }
 }

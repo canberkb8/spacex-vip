@@ -16,6 +16,7 @@ import UIKit
 
 protocol RocketsPresentationLogic {
     func presentRockets(response: Rockets.GetRocketList.Response)
+    func presentRocketError(error: Error)
 }
 
 class RocketsPresenter: RocketsPresentationLogic {
@@ -33,4 +34,9 @@ class RocketsPresenter: RocketsPresentationLogic {
         let viewModel = Rockets.GetRocketList.ViewModel(displayedRockets: displayedRockets)
         viewController?.displayGetRocketList(viewModel: viewModel)
     }
+    
+    func presentRocketError(error: Error) {
+        viewController?.displayRocketError(error: error)
+    }
+    
 }

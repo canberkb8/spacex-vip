@@ -21,11 +21,22 @@ extension CNetworkError: LocalizedError {
                 "The specified item could not be found.",
                 comment: "Resource Not Found"
             )
-        case .unexpected(_):
-            return NSLocalizedString(
-                "An unexpected error occurred.",
-                comment: "Unexpected Error"
+        case .unexpected(code: let code):
+            switch code {
+            case 400: return NSLocalizedString(
+                    "Bad request.",
+                    comment: "Bad Request"
+                )
+            case 404 : return NSLocalizedString(
+                "Not Found.",
+                comment: "Not Found"
             )
+            default:
+                return NSLocalizedString(
+                    "An unexpected error occurred.",
+                    comment: "Unexpected Error"
+                )
+            }
         case .internetConnection:
             return NSLocalizedString(
                 "There was a problem with your internet connection.",
