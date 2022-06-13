@@ -31,7 +31,7 @@ class RocketDetailInteractor: RocketDetailBusinessLogic, RocketDetailDataStore {
 
     // MARK: Do something
 
-    func getPassingData(){
+    func getPassingData() {
         presenter?.dataPass(data: passingData)
     }
 
